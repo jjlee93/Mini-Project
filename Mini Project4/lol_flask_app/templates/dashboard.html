@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOL 승부예측</title>
+    <style>
+        /* CSS 스타일 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 200px;
+            margin-left: 200px;
+        }
+        .team-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+       
+        .blue-team {
+            
+            background-size: cover;
+            background-position: center;
+        }
+        .red-team {
+            
+            background-size: cover;
+            background-position: center;
+        }
+        .input-row {
+            display: flex;
+            justify-content: center;
+        }
+        .input-row input {
+            margin: 10px;
+            padding: 5px;
+        }
+        .prediction-button {
+            display: flex;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: 150px;
+            justify-content: center;
+        }
+        .prediction-button button{
+            font-size: 20px;
+        }
+        .bottom-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            padding: 20px;
+        }
+        .input-row:last-child {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <div class="team-container blue-team">
+    
+            <form method="POST" action="{{ url_for('prediction.prediction') }}">
+                <div style="text-align: center; margin-right: 100px;">
+                    <h1>Blue Team</h1>
+                    <div class="input-row blue-team">
+                        <input type="text" name="blue-kill-score" placeholder="Kill Score">
+                        <input type="text" name="blue-assist-score" placeholder="Assist Score">
+                    </div>
+                    <div class="input-row blue-team">
+                        <input type="text" name="blue-death-score" placeholder="Death Score">
+                        <input type="text" name="blue-first-blood" placeholder="First Blood : 0 OR 1">
+                    </div>
+                    <div class="input-row blue-team">
+                        <input type="text" name="blue-first-dragon" placeholder="First Dragon : 0 OR 1">
+                        <input type="text" name="blue-dragon-kill" placeholder="Dragon Kill">
+                    </div>
+                    <div class="input-row blue-team">
+                        <input type="text" name="blue-first-riftherald" placeholder="First Riftherald : 0 OR 1">
+                        <input type="text" name="blue-riftherald-kill" placeholder="Riftherald Kill">
+                    </div>
+                    <div class="input-row blue-team">
+                        <input type="text" name="blue-first-baron" placeholder="First Baron : 0 OR 1">
+                        <input type="text" name="blue-baron-kill" placeholder="Baron Kill">
+                    </div>
+                    <div class="input-row blue-team">
+                        <input type="text" name="blue-first-tower" placeholder="First Tower : 0 OR 1">
+                        <input type="text" name="blue-tower-destroyed" placeholder="Tower Destroyed">
+                    </div>
+                    <div class="input-row blue-team">
+                        <input type="text" name="blue-first-inhibitor" placeholder="First Inhibitor">
+                        <input type="text" name="blue-inhibitor-destroyed" placeholder="Inhibitor Destroyed">
+                    </div>
+                    <div class="input-row blue-team">
+                        <input type="text" name="blue-total-level" placeholder="Total Level">
+                        <input type="text" name="blue-total-gold" placeholder="Total Gold">
+                    </div>
+                </div>
+        </div>
+        <div class="team-container red-team">
+                    <h1>Red Team</h1>
+                    <div class="input-row red-team">
+                        <input type="text" name="red-kill-score" placeholder="Kill Score">
+                        <input type="text" name="red-assist-score" placeholder="Assist Score">
+                    </div>
+                    <div class="input-row red-team">
+                        <input type="text" name="red-death-score" placeholder="Death Score">
+                        <input type="text" name="red-first-blood" placeholder="First Blood : 0 OR 1">
+                    </div>
+                    <div class="input-row red-team">
+                        <input type="text" name="red-first-dragon" placeholder="First Dragon : 0 OR 1">
+                        <input type="text" name="red-dragon-kill" placeholder="Dragon Kill">
+                    </div>
+                    <div class="input-row red-team">
+                        <input type="text" name="red-first-riftherald" placeholder="First Riftherald : 0 OR 1">
+                        <input type="text" name="red-riftherald-kill" placeholder="Riftherald Kill">
+                    </div>
+                    <div class="input-row red-team">
+                        <input type="text" name="red-first-baron" placeholder="First Baron : 0 OR 1">
+                        <input type="text" name="red-baron-kill" placeholder="Baron Kill">
+                    </div>
+                    <div class="input-row red-team">
+                        <input type="text" name="red-first-tower" placeholder="First Tower : 0 OR 1">
+                        <input type="text" name="red-tower-destroyed" placeholder="Tower Destroyed">
+                    </div>
+                    <div class="input-row red-team">
+                        <input type="text" name="red-first-inhibitor" placeholder="First Inhibitor">
+                        <input type="text" name="red-inhibitor-destroyed" placeholder="Inhibitor Destroyed">
+                    </div>
+                    <div class="input-row red-team">
+                        <input type="text" name="red-total-level" placeholder="Total Level">
+                        <input type="text" name="red-total-gold" placeholder="Total Gold">
+                    </div>
+            </div>
+    </div>
+        <div class="prediction-button">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOL 승부예측</title>
+    <style>
+        body {
+            background-image: url("/static/images/background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+        }
+        .overlay {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .overlay img {
+            width: 40%;
+            height: 20%;
+            object-fit: contain;
+            margin-top: 8cm;
+        }
+        .content {
+            position: absolute;
+            top: calc(50% + 2cm);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        .button-container {
+            margin-top: 2cm;
+        }
+        .button-container button {
+            font-size: 18px;
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <img src="/static/images/scroll.png" alt="overlay image">
+    </div>
+    <div class="content">
+        <h1 style="margin-bottom: 2cm;">LOL AI 승부 예측</h1>
+        <h5>이용하시려는 서비스 버튼을 클릭해주세요.</h5>
+        <div class="button-container">
+            <button onclick="location.href='/prediction'">승부 예측</button>
+        </div>
+    </div>
+</body>
+</html>
